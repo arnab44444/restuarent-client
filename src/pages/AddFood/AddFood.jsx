@@ -12,13 +12,15 @@ const AddFood = () => {
     const formData = new FormData(form);
     const newFood = Object.fromEntries(formData.entries());
 
-    // Manually add current user's info if available
-    // newFood.addedByName = user?.displayName;
-    // newFood.addedByEmail = user?.email;
 
     console.log(newFood);
 
-    axios.post('http://localhost:3000/foods', newFood)
+    const updateFood = {
+      ...newFood ,
+      quantity: parseInt(newFood.quantity)
+    }
+
+    axios.post('http://localhost:3000/foods', updateFood)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

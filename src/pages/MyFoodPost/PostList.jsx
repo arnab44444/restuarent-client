@@ -1,6 +1,6 @@
 import React, { use, useState } from 'react';
 import { Link } from 'react-router';
-import MyFoodCard from '../MyFood/MyFoodCard';
+import MyFoodCard from './MyFoodCard';
 
 const PostList = ({myPostPromise}) => {
 
@@ -12,9 +12,9 @@ const PostList = ({myPostPromise}) => {
     const [post, setPost] = useState(initialPost);
 
      return (
-    <div>
+    <div className='mx-auto'>
       {/* Table Layout for Medium and Large Screens */}
-      <div className="hidden sm:block px-4 mt-10">
+      <div className="bg-gray-300 hidden sm:block px-4 mt-10">
         <table className="table">
           <thead>
             <tr>

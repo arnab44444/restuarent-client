@@ -11,8 +11,9 @@ import AllFoods from "../pages/AllFoods/AllFoods";
 import FoodDetails from "../pages/AllFoods/FoodDetails";
 import FoodPurchase from "../pages/FoodPurchase/FoodPurchase";
 import MyFood from "../pages/MyFood/MyFood";
-import UpdateFood from "../pages/MyFood/UpdateFood";
+import UpdateFood from "../pages/MyFoodPost/UpdateFood";
 import MyPost from "../pages/MyFoodPost/MyPost";
+//import CancelOrder from "../pages/MyFood/CancelOrder";
 
 const router = createBrowserRouter([
   {
@@ -24,10 +25,10 @@ const router = createBrowserRouter([
         //path: '',
         index: true,
 
-        // loader: () => fetch("http://localhost:3000/jobs"),
-        // hydrateFallbackElement: (
-        //   <span className="loading loading-bars loading-xl"></span>
-        // ),
+        loader: () => fetch("http://localhost:3000/top-purchased-foods"),
+        hydrateFallbackElement: (
+          <span className="loading loading-bars loading-xl"></span>
+        ),
         element: <Home></Home>,
       },
 
@@ -91,6 +92,16 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+
+      // {
+      //   path: "/cancelOrder/:id",
+      //   loader: ({ params }) =>
+      //     fetch(`http://localhost:3000/cancel_Order/${params.id}`),
+      //   hydrateFallbackElement: (
+      //     <span className="loading loading-bars loading-xl"></span>
+      //   ),
+      //   element: <CancelOrder></CancelOrder>,
+      // },
 
       {
         path: "/updateFood/:id",

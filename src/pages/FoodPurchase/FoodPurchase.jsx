@@ -3,16 +3,17 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
 
 const FoodPurchase = () => {
+  const food = useLoaderData();
+  console.log(food)
 
-     const food = useLoaderData(); // Loaded from route loader
-  const {_id, name, price, quantity } = food;
+  const { _id, name, price, quantity, purchasedCount = 0 } = food;
 
-    const [foods, setFoods] = useState(food);
-
-      const [hasOrderd, setHasOrdered] = useState(false);
-
+  const [foods, setFoods] = useState(food);
+  const [hasOrderd, setHasOrdered] = useState(false);
+  const [inputQuantity, setInputQuantity] = useState(1);
 
   const { user } = useContext(AuthContext);
   const [currentTime, setCurrentTime] = useState("");
@@ -33,14 +34,20 @@ const FoodPurchase = () => {
   }, []);
 
   const confirmOrder = () => {
+
+    if (food.addedByEmail === user.email) {
+      Swal.fire("Error", "You cannot order your own food!", "error");
+      return;
+    }
+    
     const purchaseData = {
-       foodId: _id,
-       name,
+      foodId: _id,
+      name,
       price,
-      quantity,
+      quantity: inputQuantity,
       buyerName: user.displayName,
       buyerEmail: user.email,
-      orderTime: currentTime, // ✅ sending time to backend
+      orderTime: currentTime,
     };
 
     axios
@@ -49,7 +56,8 @@ const FoodPurchase = () => {
         toast.success("Purchase successfully");
         setFoods((prev) => ({
           ...prev,
-          quantity: prev.quantity - 1,
+          quantity: prev.quantity - inputQuantity,
+          purchasedCount: (prev.purchasedCount || 0) + inputQuantity,
         }));
         setHasOrdered(true);
       })
@@ -58,24 +66,14 @@ const FoodPurchase = () => {
       });
   };
 
-  
-
   return (
     <div className="max-w-md mx-auto mt-10 p-4 shadow-lg rounded-lg bg-white">
-      <h2 className="text-2xl font-bold mb-4 text-center text-green-600">🍛 Confirm Food Purchase</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center text-green-600">
+        🍛 Confirm Food Purchase
+      </h2>
 
       <div className="space-y-4">
-        {/* <div>
-          <label className="label font-semibold">Food Name</label>
-          <input type="text" value={food.name} readOnly className="input input-bordered w-full" />
-        </div>
-
         <div>
-          <label className="label font-semibold">Orderer Email</label>
-          <input type="email" value={user?.email} readOnly className="input input-bordered w-full" />
-        </div> */}
-
-                <div>
           <label className="label font-semibold">Food Name</label>
           <input
             type="text"
@@ -84,6 +82,7 @@ const FoodPurchase = () => {
             readOnly
           />
         </div>
+
         <div>
           <label className="label font-semibold">Price</label>
           <input
@@ -93,15 +92,19 @@ const FoodPurchase = () => {
             readOnly
           />
         </div>
+
         <div>
           <label className="label font-semibold">Quantity</label>
           <input
             type="number"
-            
-            className="input input-bordered w-full bg-gray-100"
-            
+            min="1"
+            max={quantity}
+            value={inputQuantity}
+            onChange={(e) => setInputQuantity(Number(e.target.value))}
+            className="input input-bordered w-full"
           />
         </div>
+
         <div>
           <label className="label font-semibold">Buyer Name</label>
           <input
@@ -111,6 +114,7 @@ const FoodPurchase = () => {
             readOnly
           />
         </div>
+
         <div>
           <label className="label font-semibold">Buyer Email</label>
           <input
@@ -121,15 +125,20 @@ const FoodPurchase = () => {
           />
         </div>
 
-
         <div>
           <label className="label font-semibold">Order Time</label>
-          <input type="text" value={currentTime} readOnly className="input input-bordered w-full bg-gray-100" />
+          <input
+            type="text"
+            value={currentTime}
+            readOnly
+            className="input input-bordered w-full bg-gray-100"
+          />
         </div>
 
         <button
           onClick={confirmOrder}
           className="btn btn-success w-full mt-4"
+          disabled={inputQuantity > quantity || inputQuantity <= 0}
         >
           Confirm Purchase
         </button>

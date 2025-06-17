@@ -33,7 +33,14 @@ const MyFood = () => {
   // }, [user])
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url("/src/assets/bg.jpg")`,
+        backgroundSize: "cover",
+        height: "800px"
+      }}
+    >
+    <h1 className="font-bold text-2xl text-center  text-blue-700">My Orders</h1>
       <Suspense
         fallback={<span className="loading loading-bars loading-xl"></span>}
       >
@@ -49,7 +56,7 @@ const MyFood = () => {
 export default MyFood;
 
 //{
-  /* <div>
+/* <div>
       {orders.length === 0 ? (
         <div className="text-center py-20">
           <h2 className="text-2xl font-bold text-error mb-4">

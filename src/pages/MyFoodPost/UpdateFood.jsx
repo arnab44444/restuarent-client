@@ -29,8 +29,6 @@ const UpdateFood = () => {
       description,
       quantity,
       image,
-      email,
-      displayName,
     };
 
     fetch(`http://localhost:3000/foods/${data?._id}`, {

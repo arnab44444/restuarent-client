@@ -1,18 +1,16 @@
-// components/ImageSlider.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-// import HomeAnimation from "./HomeAnimation";
+import HomeAnimation from "./HomeAnimation";
 
 const ImageSlider = () => {
-  const images = [
-     "https://i.ibb.co/rKBXdqxF/inspire-a-love-of-reading-header-the-reading-roundup-1.jpg",
-    // <HomeAnimation></HomeAnimation>,
-    "https://i.ibb.co/mFM7NdvG/library-slider-img-3-1653482722.jpg",
-    "https://i.ibb.co/bRqqMWwG/WHAT-IS-THE-PURPOSE-OF-A-LIBRARY-MANAGEMENT-SYSTEM-min.png",
+  const slides = [
+    { type: "component", content: <HomeAnimation /> },
+    { type: "image", content: "https://i.ibb.co/Mxdf8fsX/vintage-illustration-cafe-terrace-1015-72-1.jpg" },
+    { type: "image", content: "https://i.ibb.co/DP4BjvP9/360-F-294263329-1-Igvq-Ng-Dbhm-QNg-Dxkhl-W433u-OFu-IDar4.jpg" },
   ];
 
   return (
@@ -27,13 +25,17 @@ const ImageSlider = () => {
         loop
         className="rounded-lg"
       >
-        {images.map((url, idx) => (
-          <SwiperSlide key={idx}>
-            <img
-              src={url}
-              alt={`slide-${idx}`}
-              className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px]  rounded-lg"
-            />
+        {slides.map((slide, idx) => (
+          <SwiperSlide key={idx} className="rounded-lg">
+            {slide.type === "image" ? (
+              <img
+                src={slide.content}
+                alt={`slide-${idx}`}
+                className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] rounded-lg object-cover"
+              />
+            ) : (
+              slide.content // directly render the component (like <HomeAnimation />)
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,6 +1,6 @@
 import React, { use, useState } from 'react';
 import { Link } from 'react-router';
-import MyFoodCard from './MyFoodCard';
+import MyOrderCard from './MyOrderCard';
 
 const FoodList = ({myFoodPromise}) => {
 
@@ -12,28 +12,28 @@ const FoodList = ({myFoodPromise}) => {
     const [orders, setOrders] = useState(initialFood);
 
      return (
-    <div>
+    <div className=' mx-auto'>
       {/* Table Layout for Medium and Large Screens */}
-      <div className="hidden sm:block px-4 mt-10">
+      <div className="bg-gray-300 hidden sm:block px-4 mt-10">
         <table className="table">
           <thead>
             <tr>
               <th>Picture</th>
               <th>Food Name</th>
-              <th>Category</th>
-              <th>Origin</th>
+              <th>Quantity</th>
+              <th>Buyer Name</th>
               <th>Price</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             {orders.map((food) => (
-            <MyFoodCard
+            <MyOrderCard
               key={food._id}
               food={food}
-             //  orders={orders}
+               orders={orders}
                // (user.accessToken)
-            //   setOrders={setOrders}
+               setOrders={setOrders}
             />
           ))}
           </tbody>
