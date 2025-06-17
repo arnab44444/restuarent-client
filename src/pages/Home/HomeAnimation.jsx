@@ -13,7 +13,7 @@ const HomeAnimation = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-2xl md:text-5xl font-extrabold leading-snug md:leading-tight">
-            Welcome to <span className="text-yellow-300">FoodVerse</span>
+            Welcome to <span className="text-yellow-300">Crave House</span>
           </h1>
         </motion.div>
 

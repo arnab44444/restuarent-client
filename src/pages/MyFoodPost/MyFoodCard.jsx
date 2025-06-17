@@ -17,21 +17,19 @@ const MyFoodCard = ({ food }) => {
             </div>
           </div>
         </td>
-        <td className="font-semibold text-blue-600 ">{name}</td>
-        <td className="capitalize">{category}</td>
-        <td className="capitalize">{origin}</td>
-        <td className="text-left">{price}</td>
+        <td className="font-semibold text-primary">{name}</td>
+        <td className="capitalize text-secondary">{category}</td>
+        <td className="capitalize text-secondary">{origin}</td>
+        <td className="text-left text-primary">{price}</td>
 
         <td>
           <Link to={`/updateFood/${_id}`}>
-            <button className="btn btn-sm md:btn-md bg-blue-500 hover:bg-blue-700">
-             Update
+            <button className="btn btn-sm md:btn-md bg-primary hover:bg-secondary">
+              Update
             </button>
           </Link>
         </td>
       </tr>
-
-      
     </>
   );
 };

@@ -1,23 +1,20 @@
-import React, { use, useState } from 'react';
-import { Link } from 'react-router';
-import MyOrderCard from './MyOrderCard';
+import React, { use } from "react";
+import MyOrderCard from "./MyOrderCard";
 
-const FoodList = ({myFoodPromise}) => {
+const FoodList = ({ myFoodPromise }) => {
+  const initialFood = use(myFoodPromise);
 
-    const initialFood = use(myFoodPromise);
+  console.log(initialFood);
 
-    console.log(initialFood);
+  const [orders, setOrders] = React.useState(initialFood);
 
-
-    const [orders, setOrders] = useState(initialFood);
-
-     return (
-    <div className=' mx-auto'>
+  return (
+    <div className="mx-auto">
       {/* Table Layout for Medium and Large Screens */}
-      <div className="bg-gray-300 hidden sm:block px-4 mt-10">
-        <table className="table">
+      <div className="bg-base-200 hidden sm:block px-4 mt-10 rounded-lg shadow-md">
+        <table className="table w-full">
           <thead>
-            <tr>
+            <tr className="text-primary">
               <th>Picture</th>
               <th>Food Name</th>
               <th>Quantity</th>
@@ -28,14 +25,13 @@ const FoodList = ({myFoodPromise}) => {
           </thead>
           <tbody>
             {orders.map((food) => (
-            <MyOrderCard
-              key={food._id}
-              food={food}
-               orders={orders}
-               // (user.accessToken)
-               setOrders={setOrders}
-            />
-          ))}
+              <MyOrderCard
+                key={food._id}
+                food={food}
+                orders={orders}
+                setOrders={setOrders}
+              />
+            ))}
           </tbody>
         </table>
       </div>
@@ -45,7 +41,7 @@ const FoodList = ({myFoodPromise}) => {
         {orders.map((food) => (
           <div
             key={food._id}
-            className="border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm bg-base-100"
+            className="border border-base-300 rounded-xl p-4 shadow-sm bg-base-100"
           >
             <div className="flex items-center gap-4 mb-2">
               <img
@@ -54,16 +50,15 @@ const FoodList = ({myFoodPromise}) => {
                 className="h-14 w-14 rounded-xl object-cover"
               />
               <div>
-                <h2 className="text-lg font-semibold">{food.name}</h2>
-                <p className="text-sm text-gray-500">{food.category}</p>
-                
+                <h2 className="text-lg font-semibold text-primary">{food.name}</h2>
+                <p className="text-sm text-secondary">{food.category}</p>
               </div>
             </div>
-            <p className="font-semibold">{food.origin}</p>
+            <p className="font-semibold text-secondary">{food.origin}</p>
 
             <div className="mt-3">
               <a href={`/updateBook/${food._id}`}>
-                <button className="btn w-full bg-blue-500 hover:bg-blue-700">
+                <button className="btn w-full bg-primary hover:bg-secondary text-white transition-colors duration-300">
                   Update
                 </button>
               </a>
@@ -73,62 +68,6 @@ const FoodList = ({myFoodPromise}) => {
       </div>
     </div>
   );
-
-
-  
 };
 
-
 export default FoodList;
-
-
-{/* Table Layout for Medium and Large Screens */}
-    //   <div className="hidden sm:block px-4 mt-10">
-    //     <table className="table">
-    //       <thead>
-    //         <tr>
-    //           <th>Picture</th>
-    //           <th>Book Name</th>
-    //           <th>Category</th>
-    //           <th>Author</th>
-    //           <th></th>
-    //         </tr>
-    //       </thead>
-    //       <tbody>
-    //         {books.map((book) => (
-    //           <BookCard key={book._id} book={book} />
-    //         ))}
-    //       </tbody>
-    //     </table>
-    //   </div>
-
-    //   {/* Card Layout for Small Screens */}
-    //   <div className="sm:hidden px-4 mt-10 space-y-5">
-    //     {books.map((book) => (
-    //       <div
-    //         key={book._id}
-    //         className="border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm bg-base-100"
-    //       >
-    //         <div className="flex items-center gap-4 mb-2">
-    //           <img
-    //             src={book.image}
-    //             alt={book.name}
-    //             className="h-14 w-14 rounded-xl object-cover"
-    //           />
-    //           <div>
-    //             <h2 className="text-lg font-semibold">{book.name}</h2>
-    //             <p className="text-sm text-gray-500">{book.category}</p>
-    //           </div>
-    //         </div>
-    //         <p className="font-semibold">{book.author}</p>
-
-    //         <div className="mt-3">
-    //           <a href={`/updateBook/${book._id}`}>
-    //             <button className="btn w-full bg-blue-500 hover:bg-blue-700">
-    //               Update
-    //             </button>
-    //           </a>
-    //         </div>
-    //       </div>
-    //     ))}
-    //   </div>

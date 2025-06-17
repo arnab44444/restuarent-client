@@ -32,7 +32,7 @@ const StatsSection = () => {
         <div key={index} className="text-center space-y-2">
           <div className="flex justify-center">{stat.icon}</div>
           <h2 className="text-3xl font-bold text-neutral">
-            <CountUp end={stat.value} duration={3} />+
+            <CountUp end={stat.value} duration={5} />+
           </h2>
           <p className="text-sm text-base-content">{stat.label}</p>
         </div>

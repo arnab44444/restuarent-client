@@ -8,29 +8,11 @@ import FoodList from "./FoodList";
 // import { myBorrowPromise } from "../../api/borrowApi";
 
 const MyFood = () => {
-  // const initialBook = useLoaderData();
-
-  // console.log(initialBook);
-
-  // const [orders, setOrders] = useState(initialBook);
+  
 
   const { user } = useContext(AuthContext);
 
-  //const {myBorrowPromise} = useBorrowApi();
-
-  //console.log("token in the context", user.accessToken);
-
-  // useEffect(() => {
-  //   axios(`https://library-server-self-theta.vercel.app/my-orders/${user?.email}`)
-  //     .then(data => {
-
-  //       console.log(data?.data)
-  //       setOrders(data?.data)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // }, [user])
+  
 
   return (
     <div
@@ -45,9 +27,7 @@ const MyFood = () => {
         fallback={<span className="loading loading-bars loading-xl"></span>}
       >
         <FoodList myFoodPromise={myFoodPromise(user.email)}></FoodList>
-        {/* <ApplicationList
-          myApplicationsPromise={myApplicationsPromise(user.email)}
-        ></ApplicationList> */}
+        
       </Suspense>
     </div>
   );
