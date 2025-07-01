@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         //path: '',
         index: true,
 
-        loader: () => fetch("http://localhost:3000/top-purchased-foods"),
+        loader: () => fetch("https://restuarent-server-sepia.vercel.app/top-purchased-foods"),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: "allFood",
 
-        loader: () => fetch("http://localhost:3000/foods"),
+        loader: () => fetch("https://restuarent-server-sepia.vercel.app/foods"),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/foodDetails/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/foodDetails/${params.id}`),
+          fetch(`https://restuarent-server-sepia.vercel.app/foodDetails/${params.id}`),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
       {
         path: "/foodPurchase/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/foodPurchase/${params.id}`),
+          fetch(`https://restuarent-server-sepia.vercel.app/foodPurchase/${params.id}`),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
       // {
       //   path: "/cancelOrder/:id",
       //   loader: ({ params }) =>
-      //     fetch(`http://localhost:3000/cancel_Order/${params.id}`),
+      //     fetch(`https://restuarent-server-sepia.vercel.app/cancel_Order/${params.id}`),
       //   hydrateFallbackElement: (
       //     <span className="loading loading-bars loading-xl"></span>
       //   ),
@@ -102,7 +102,7 @@ const router = createBrowserRouter([
       {
         path: "/updateFood/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/updateFood/${params.id}`),
+          fetch(`https://restuarent-server-sepia.vercel.app/updateFood/${params.id}`),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -137,7 +137,7 @@ const router = createBrowserRouter([
   },
   //   {
   //     path: "/jobs/:id",
-  //     loader: ({ params }) => fetch(`http://localhost:3000/jobs/${params.id}`),
+  //     loader: ({ params }) => fetch(`https://restuarent-server-sepia.vercel.app/jobs/${params.id}`),
   //     hydrateFallbackElement: (
   //       <span className="loading loading-bars loading-xl"></span>
   //     ),
@@ -153,7 +153,7 @@ const router = createBrowserRouter([
   //   },
   //   {
   //     path: "/myApplications",
-  //     // loader: () => fetch(`http://localhost:3000/applications?email=${email}`),
+  //     // loader: () => fetch(`https://restuarent-server-sepia.vercel.app/applications?email=${email}`),
   //     //  hydrateFallbackElement: (
   //     //       <span className="loading loading-bars loading-xl"></span>
   //     //     ),
@@ -167,7 +167,7 @@ const router = createBrowserRouter([
   //   {
   //     path: "/updateApplication/:id",
   //     loader: ({ params }) =>
-  //       fetch(`http://localhost:3000/updateApplication/${params.id}`),
+  //       fetch(`https://restuarent-server-sepia.vercel.app/updateApplication/${params.id}`),
   //     hydrateFallbackElement: (
   //       <span className="loading loading-bars loading-xl"></span>
   //     ),
@@ -195,7 +195,7 @@ const router = createBrowserRouter([
   //   {
   //     path: "/applications/:job_id",
   //     loader: ({params}) =>
-  //       fetch(`http://localhost:3000/applications/job/${params.job_id}`),
+  //       fetch(`https://restuarent-server-sepia.vercel.app/applications/job/${params.job_id}`),
   //     hydrateFallbackElement: (
   //       <span className="loading loading-bars loading-xl"></span>
   //     ),

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Outlet } from 'react-router';
 import Navbar from '../shared/Navbar';
+import Footer from '../shared/Footer';
 
 const AuthLayout = () => {
     return (
@@ -14,6 +15,8 @@ const AuthLayout = () => {
                 <Outlet></Outlet>
                 
             </main>
+
+            <Footer></Footer>
         </div>
     );
 };

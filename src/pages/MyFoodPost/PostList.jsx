@@ -58,7 +58,7 @@ const PostList = ({ myPostPromise }) => {
             </div>
 
             <div className="mt-4">
-              <Link to={`/updateBook/${food._id}`}>
+              <Link to={`/updateFood/${food._id}`}>
                 <button className="btn btn-sm w-full bg-orange-500 hover:bg-red-600 text-white rounded-md transition-all duration-300">
                   Update
                 </button>

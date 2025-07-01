@@ -16,6 +16,7 @@ const MyFood = () => {
 
   return (
     <div
+    className="bg-cover bg-center min-h-[calc(100vh-100px)] py-10"
       style={{
         backgroundImage: `url("https://i.ibb.co/JWs9SVLK/top-view-fast-food-mix-mozzarella-sticks-club-sandwich-hamburger-mushroom-pizza-caesar-shrimp-salad.jpg")`
       }}

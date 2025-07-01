@@ -31,7 +31,7 @@ const UpdateFood = () => {
       image,
     };
 
-    fetch(`http://localhost:3000/foods/${data?._id}`, {
+    fetch(`https://restuarent-server-sepia.vercel.app/foods/${data?._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const UpdateFood = () => {
   return (
     <div className="p-4 bg-gray-300">
       <div className="p-12 text-center space-y-4">
-        <h1 className="text-3xl font-bold text-green-500">Update Food</h1>
+        <h1 className="text-3xl mt-20 font-bold text-orange-500">Update Food</h1>
       </div>
 
       <form onSubmit={handleUpdateFood}>
@@ -162,7 +162,7 @@ const UpdateFood = () => {
 
         <input
           type="submit"
-          className="btn w-full bg-green-500 hover:bg-green-800 hover:text-white"
+          className="btn w-full bg-orange-500 text-white hover:bg-red-600 hover:text-white"
           value="Update Food"
         />
       </form>

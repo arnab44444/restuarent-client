@@ -29,7 +29,7 @@ const Login = () => {
     // login user
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        //console.log(result.user);
 
         // eta oi portion ta jokon see more e click korbo tokon login page theke login korar por direct
         // show more page niye jabe jodi oi tstae ta thake ar nahole home e niye jabe
@@ -49,7 +49,7 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         //console.log(location)
-        console.log(result.user);
+       // console.log(result.user);
         navigate(location.state || "/");
         
       })

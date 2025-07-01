@@ -79,7 +79,9 @@ const Navbar = () => {
                 <NavLink
                   // to={`/my-orders/${user?.email}`}
                   to="/myFood-post"
-                  className={({ isActive }) => (isActive ? "text-indigo-500" : "")}
+                  className={({ isActive }) =>
+                    isActive ? "text-indigo-500" : ""
+                  }
                 >
                   My Post
                 </NavLink>
@@ -124,7 +126,11 @@ const Navbar = () => {
             src="https://i.postimg.cc/FFCdWY6S/green-eco-garden-plant-by-marcololstudio-brandcrowd.png"
             className="h-10"
           /> */}
-            <p className="font-bold text-secondary">Crave House</p>
+            {/* <p className="font-bold text-secondary">Crave House</p> */}
+
+            <p className="text-xl font-extrabold text-red-500 drop-shadow-lg tracking-wide">
+              Crave House
+            </p>
 
             <input
               type="checkbox"
@@ -249,13 +255,13 @@ const Navbar = () => {
             <>
               <Link
                 to="/auth/login"
-                className="btn bg-orange-600 text-white px-3"
+                className="btn bg-red-500 text-white hover:bg-red-700 px-3"
               >
                 Login
               </Link>
               <Link
                 to="/auth/register"
-                className="btn bg-orange-600 text-white px-3"
+                className="btn bg-red-500 text-white hover:bg-red-700 px-3"
               >
                 Register
               </Link>

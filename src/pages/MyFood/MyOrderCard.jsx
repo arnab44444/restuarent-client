@@ -17,7 +17,7 @@ const MyOrderCard = ({ food, orders, setOrders }) => {
       confirmButtonText: "Yes, cancel it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/cancel_order/${_id}`, {
+        fetch(`https://restuarent-server-sepia.vercel.app/cancel_order/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -30,10 +30,10 @@ const MyOrderCard = ({ food, orders, setOrders }) => {
                 confirmButtonColor: "#3b82f6", // primary color
               });
 
-              setBooks((prev) => ({
-                ...prev,
-                quantity: prev.quantity + 1,
-              }));
+              // setBooks((prev) => ({
+              //   // ...prev,
+              //   // quantity: prev.quantity + 1,
+              // }));
 
               const remainingOrders = orders.filter((book) => book._id !== _id);
               setOrders(remainingOrders);
