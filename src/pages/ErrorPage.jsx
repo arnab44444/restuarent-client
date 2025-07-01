@@ -11,7 +11,7 @@ const ErrorPage = () => {
         Sorry, the page you are looking for doesn't exist or has been moved.
       </p>
 
-      <Link to="/" className="btn btn-primary flex items-center gap-2">
+      <Link to="/" className="btn bg-orange-600 text-white flex items-center gap-2">
         <FaArrowLeft /> Go Back Home
       </Link>
 

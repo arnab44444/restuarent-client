@@ -44,11 +44,7 @@ const router = createBrowserRouter([
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
-        element: (
-          
-            <AllFoods></AllFoods>
-          
-        ),
+        element: <AllFoods></AllFoods>,
       },
 
       {
@@ -113,15 +109,14 @@ const router = createBrowserRouter([
         element: <UpdateFood></UpdateFood>,
       },
 
-
       {
-    path: "/myFood-post",
-    element: (
-      <PrivateRoute>
-        <MyPost></MyPost>
-      </PrivateRoute>
-    ),
-  },
+        path: "/myFood-post",
+        element: (
+          <PrivateRoute>
+            <MyPost></MyPost>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 

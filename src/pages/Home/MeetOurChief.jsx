@@ -30,10 +30,10 @@ const chefs = [
 
 const MeetOurChief = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-blue-50 text-center">
+    <section className="py-20 bg-gradient-to-b from-orange-50 via-white to-orange-100 text-center">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
-          className="text-4xl font-bold mb-4 text-gray-800"
+          className="text-4xl font-bold mb-4 text-orange-600"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

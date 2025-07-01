@@ -17,12 +17,9 @@ const MyFood = () => {
   return (
     <div
       style={{
-        backgroundImage: `url("/src/assets/bg.jpg")`,
-        backgroundSize: "cover",
-        height: "800px"
+        backgroundImage: `url("https://i.ibb.co/JWs9SVLK/top-view-fast-food-mix-mozzarella-sticks-club-sandwich-hamburger-mushroom-pizza-caesar-shrimp-salad.jpg")`
       }}
     >
-    <h1 className="font-bold text-2xl text-center  text-blue-700">My Orders</h1>
       <Suspense
         fallback={<span className="loading loading-bars loading-xl"></span>}
       >
@@ -46,7 +43,7 @@ export default MyFood;
             Go back to the Home section and borrow your books.
           </p>
           <Link to="/">
-            <button className="btn btn-primary">Go to Home</button>
+            <button className="btn bg-orange-600 text-white">Go to Home</button>
           </Link>
         </div>
       ) : (

@@ -37,10 +37,10 @@ const AddFood = () => {
   };
 
   return (
-    <div className="p-4 bg-gray-300">
+    <div className="p-4 bg-orange-200">
       <div className="p-12 text-center space-y-4">
-        <h1 className="text-3xl font-bold text-blue-600">Add Food Item</h1>
-        <p>
+        <h1 className="text-3xl font-bold my-5 text-orange-600">Add Food Item</h1>
+        <p className="text-black">
           Share delicious food from around the world! Add new food items with details like origin, ingredients, and more.
         </p>
       </div>
@@ -176,7 +176,7 @@ const AddFood = () => {
         {/* Submit Button */}
         <input
           type="submit"
-          className="btn w-full bg-blue-500 hover:bg-blue-800 hover:text-white mt-6"
+          className="btn w-full text-white bg-orange-600 hover:bg-red-600 hover:text-white mt-6"
           value="Add Item"
         />
       </form>

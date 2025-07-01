@@ -10,27 +10,18 @@ const HomeLayout = () => {
   //const {state} = useNavigation()
 
   return (
-    <div>
-      <header className="space-y-5">
+    <div className="flex flex-col min-h-screen">
+      {/* <header className="space-y-5 "> */}
         <Navbar></Navbar>
 
         {/* slider */}
         
 
-        {/* <div className="flex justify-center items-center">
-          <Lottie animationData={leaf} className="h-[50px] w-[50px]" />
-          <Lottie animationData={leaf} className="h-[50px] w-[50px]" />
-          <Lottie animationData={leaf} className="h-[50px] w-[50px]" />
-        </div> */}
-      </header>
+       
+      {/* </header> */}
 
-      <main className="">
+      <main className="flex-grow">
         {/* middle part */}
-        {/* 
-                <section className='main col-span-6'>
-                     {state == "loading" ? <span className="loading loading-bars loading-xl"></span>
-                     : <Outlet></Outlet> }
-                </section> */}
 
         <Outlet></Outlet>
       </main>

@@ -139,7 +139,7 @@ const FoodPurchase = () => {
 
         <button
           onClick={confirmOrder}
-          className="btn btn-primary w-full mt-4"
+          className="btn bg-orange-600 text-white w-full mt-4"
           disabled={inputQuantity > quantity || inputQuantity <= 0 || hasOrdered}
         >
           Confirm Purchase

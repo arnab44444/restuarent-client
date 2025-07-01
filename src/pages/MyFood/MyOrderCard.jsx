@@ -56,15 +56,15 @@ const MyOrderCard = ({ food, orders, setOrders }) => {
             </div>
           </div>
         </td>
-        <td className="font-semibold text-primary">{name}</td>
-        <td className="capitalize text-secondary">{quantity}</td>
-        <td className="capitalize text-secondary">{buyerName}</td>
-        <td className="text-left text-primary font-medium">{price}</td>
+        <td className="font-semibold text-black">{name}</td>
+        <td className="capitalize text-black">{quantity}</td>
+        <td className="capitalize text-black">{buyerName}</td>
+        <td className="text-left text-black font-medium">{price}</td>
 
         <td>
           <button
             onClick={() => handleReturn(_id)}
-            className="btn btn-sm md:btn-md bg-primary hover:bg-secondary text-white transition-colors duration-300"
+            className="btn btn-sm md:btn-md bg-orange-600 text-white hover:bg-red-600  transition-colors duration-300"
           >
             Delete
           </button>

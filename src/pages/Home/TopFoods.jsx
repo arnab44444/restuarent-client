@@ -17,16 +17,16 @@ const TopFoods = ({ food }) => {
         <h2 className="card-title text-xl font-bold text-gray-800">{name}</h2>
 
         <div className="flex justify-between items-center text-sm text-gray-600">
-          <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">
+          <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-medium">
             Price :৳ {price}
           </span>
-          <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">
+          <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full font-medium">
             Bought: {purchasedCount}
           </span>
         </div>
 
         <Link to={`/foodDetails/${_id}`}>
-          <button className="btn btn-primary w-full mt-3 font-semibold tracking-wide">
+          <button className="btn bg-orange-600 text-white hover:bg-red-600 w-full mt-3 font-semibold tracking-wide">
             View Details
           </button>
         </Link>
