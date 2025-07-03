@@ -8,10 +8,15 @@ The Restaurant Website is a responsive, dynamic web application designed for res
 🚀 Main Features
 
 ✅ Home Page with Hero Section – Visually engaging landing page with featured dishes. 
+
 ✅ Dynamic Menu Display – View restaurant items by category (e.g. Pizza, Drinks, Dessert). 
+
 ✅ Order System UI – Add items to cart, manage quantities (if applicable). 
-✅ Login/Register System – Firebase-based user authentication. 
+
+✅ Login/Register System – Firebase-based user authentication.
+
 ✅ Private Routes – Protect certain pages for logged-in users only. 
+
 ✅ Responsive Design – Mobile-first UI using Tailwind CSS & DaisyUI. 
 
 
@@ -22,10 +27,15 @@ The Restaurant Website is a responsive, dynamic web application designed for res
 Technology	Purpose
 
 React.js	Frontend library
+
 React Router	Routing and navigation
+
 Firebase Auth	Authentication and user session handling
+
 Tailwind CSS	Styling framework
+
 DaisyUI	Pre-built Tailwind UI components
+
 Axios	API calls
 
 
