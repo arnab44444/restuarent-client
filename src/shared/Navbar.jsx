@@ -75,7 +75,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
 
-              <li>
+              {/* <li>
                 <NavLink
                   // to={`/my-orders/${user?.email}`}
                   to="/myFood-post"
@@ -85,7 +85,7 @@ const Navbar = () => {
                 >
                   My Post
                 </NavLink>
-              </li>
+              </li> */}
 
               <li>
                 <NavLink
@@ -107,17 +107,29 @@ const Navbar = () => {
                   Add Food
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  //to={`/my-plants/${user?.email}`}
-                  to="/my-food"
-                  className={({ isActive }) =>
-                    isActive ? "text-indigo-500" : ""
-                  }
-                >
-                  My Foods
-                </NavLink>
-              </li>
+              {user && (
+              <>
+                <li>
+                  <NavLink
+                    // to={`/my-orders/${user?.email}`}
+                    to="/myFood-post"
+                    className={({ isActive }) => (isActive ? "text-white" : "")}
+                  >
+                    My Post
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink
+                    // to={`/my-orders/${user?.email}`}
+                    to="/my-food"
+                    className={({ isActive }) => (isActive ? "text-white" : "")}
+                  >
+                    My Foods
+                  </NavLink>
+                </li>
+              </>
+            )}
             </ul>
           </div>
 
@@ -153,16 +165,6 @@ const Navbar = () => {
 
             <li>
               <NavLink
-                // to={`/my-orders/${user?.email}`}
-                to="/myFood-post"
-                className={({ isActive }) => (isActive ? "text-white" : "")}
-              >
-                My Post
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
                 to="/allFood"
                 className={({ isActive }) => (isActive ? "text-white" : "")}
               >
@@ -177,15 +179,30 @@ const Navbar = () => {
                 Add Food
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                // to={`/my-orders/${user?.email}`}
-                to="/my-food"
-                className={({ isActive }) => (isActive ? "text-white" : "")}
-              >
-                My Foods
-              </NavLink>
-            </li>
+
+            {user && (
+              <>
+                <li>
+                  <NavLink
+                    // to={`/my-orders/${user?.email}`}
+                    to="/myFood-post"
+                    className={({ isActive }) => (isActive ? "text-white" : "")}
+                  >
+                    My Post
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink
+                    // to={`/my-orders/${user?.email}`}
+                    to="/my-food"
+                    className={({ isActive }) => (isActive ? "text-white" : "")}
+                  >
+                    My Foods
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 

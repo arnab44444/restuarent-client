@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
 
 const FoodDetails = () => {
   const data = useLoaderData();
 
-  const [food, setFood] = useState(data);
+  const [food] = useState(data);
 
   const {
     _id,
@@ -15,49 +15,47 @@ const FoodDetails = () => {
     category,
     description,
     price,
-    purchasedCount = 0, // default 0 if undefined
+    purchasedCount = 0,
   } = food;
 
   return (
-    <div className="max-w-md  mx-auto mt-20 p-4 shadow-lg rounded-lg bg-white">
-      <h2 className="text-3xl font-bold text-center text-orange-600 mb-4">
+    <div className="max-w-md mx-auto mt-20 p-4 shadow-lg rounded-lg bg-white">
+      <h2 className="text-3xl font-bold text-center text-orange-600 mb-6">
         🍴 Food Details
       </h2>
 
-      <div className="card bg-base-100 shadow-sm">
+      <div className="card bg-base-100 shadow-sm rounded-lg border border-orange-300">
         <figure>
-          <img
-            src={image}
-            alt={name}
-            className="h-60 w-full object-cover"
-          />
+          <img src={image} alt={name} className="h-60 w-full object-cover rounded-t-lg" />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">
+        <div className="card-body p-4">
+          <h2 className="card-title flex items-center justify-between">
             {name}
-            <div className="badge badge-secondary">{origin}</div>
+            <div className="badge badge-outline badge-md text-orange-600 border-orange-600">
+              {origin}
+            </div>
           </h2>
-          <p>{description}</p>
+          <p className="mt-2 text-gray-700">{description}</p>
 
-          <div className="mt-4 text-black space-y-2">
-            <p className="bg-red-300 text-center text-black py-1 rounded font-semibold">
+          <div className="mt-5 space-y-3 text-orange-700 font-semibold">
+            <p className="badge badge-outline w-full text-center border-orange-600">
               Quantity: {quantity}
             </p>
-            <p className="bg-yellow-300 text-center py-1 rounded font-semibold">
+            <p className="badge badge-outline w-full text-center border-orange-600">
               Category: {category}
             </p>
-            <p className="bg-green-300 text-center py-1 rounded font-semibold">
+            <p className="badge badge-outline w-full text-center border-orange-600">
               Price: ৳{price}
             </p>
-            <p className="bg-purple-300 text-center py-1 rounded font-semibold">
+            <p className="badge badge-outline w-full text-center border-orange-600">
               Purchased: {purchasedCount} times
             </p>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-6">
             {quantity > 0 ? (
               <a href={`/foodPurchase/${_id}`}>
-                <button className="btn bg-orange-600 text-white btn-sm w-full">
+                <button className="btn bg-orange-600 text-white btn-sm w-full hover:bg-orange-700">
                   Purchase Now
                 </button>
               </a>
