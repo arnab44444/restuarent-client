@@ -36,3 +36,5 @@ const TopFoods = ({ food }) => {
 };
 
 export default TopFoods;
+
+// topfoods component
