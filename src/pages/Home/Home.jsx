@@ -9,6 +9,7 @@ import HappyUsers from "./HappyUsers";
 import Gallery from "./Gallery";
 import SpecialOffers from "./SpecialOffers";
 import AboutWebsite from "./AboutWebsite";
+import Animation from "./Animation";
 
 const Home = () => {
   const foods = useLoaderData();
@@ -17,6 +18,8 @@ const Home = () => {
   return (
     <div>
       <ImageSlider></ImageSlider>
+
+      {/* <Animation></Animation> */}
 
       <div className="container mx-auto px-4 md:px-5 lg:px-8 xl:px-10">
         {/* Header */}
