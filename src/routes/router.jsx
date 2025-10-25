@@ -13,6 +13,7 @@ import FoodPurchase from "../pages/FoodPurchase/FoodPurchase";
 import MyFood from "../pages/MyFood/MyFood";
 import UpdateFood from "../pages/MyFoodPost/UpdateFood";
 import MyPost from "../pages/MyFoodPost/MyPost";
+import QuizPage from "../pages/Home/QuizPage";
 //import CancelOrder from "../pages/MyFood/CancelOrder";
 
 const router = createBrowserRouter([
@@ -46,6 +47,17 @@ const router = createBrowserRouter([
         ),
         element: <AllFoods></AllFoods>,
       },
+
+      {
+        path: "quiz",
+
+        // loader: () => fetch("https://restuarent-server-sepia.vercel.app/foods"),
+        // hydrateFallbackElement: (
+        //   <span className="loading loading-bars loading-xl"></span>
+        // ),
+        element: <QuizPage></QuizPage>,
+      },
+
 
       {
         path: "/foodDetails/:id",

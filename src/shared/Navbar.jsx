@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import QuizPage from "../pages/Home/QuizPage";
 
 const Navbar = () => {
   const { user, signOutUser, setUser } = useContext(AuthContext);
@@ -36,7 +37,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex justify-between navbar fixed top-0 left-0 w-screen z-50 m-0 p-0 bg-gradient-to-r from-orange-400 to-orange-600  border-b px-8 md:px-12 lg:px-16 xl:px-24 shadow-sm">
+      <div className="flex justify-between  bg-gradient-to-r from-orange-400 to-orange-600  border-b px-8 md:px-12 lg:px-16 xl:px-24 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -107,29 +108,54 @@ const Navbar = () => {
                   Add Food
                 </NavLink>
               </li>
-              {user && (
-              <>
-                <li>
-                  <NavLink
-                    // to={`/my-orders/${user?.email}`}
-                    to="/myFood-post"
-                    className={({ isActive }) => (isActive ? "text-white" : "")}
-                  >
-                    My Post
-                  </NavLink>
-                </li>
 
-                <li>
-                  <NavLink
-                    // to={`/my-orders/${user?.email}`}
-                    to="/my-food"
-                    className={({ isActive }) => (isActive ? "text-white" : "")}
-                  >
-                    My Foods
-                  </NavLink>
-                </li>
-              </>
-            )}
+              <li>
+                <NavLink
+                  to="/allFood"
+                  className={({ isActive }) =>
+                    isActive ? "text-indigo-500" : ""
+                  }
+                >
+                  All Foods
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/quiz"
+                  className={({ isActive }) =>
+                    isActive ? "text-indigo-500" : ""
+                  }
+                >
+                  <QuizPage></QuizPage>
+                </NavLink>
+              </li>
+              {user && (
+                <>
+                  <li>
+                    <NavLink
+                      // to={`/my-orders/${user?.email}`}
+                      to="/myFood-post"
+                      className={({ isActive }) =>
+                        isActive ? "text-white" : ""
+                      }
+                    >
+                      My Post
+                    </NavLink>
+                  </li>
+
+                  <li>
+                    <NavLink
+                      // to={`/my-orders/${user?.email}`}
+                      to="/my-food"
+                      className={({ isActive }) =>
+                        isActive ? "text-white" : ""
+                      }
+                    >
+                      My Foods
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
@@ -177,6 +203,17 @@ const Navbar = () => {
                 className={({ isActive }) => (isActive ? "text-white" : "")}
               >
                 Add Food
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/quiz"
+                className={({ isActive }) =>
+                  isActive ? "text-indigo-500" : ""
+                }
+              >
+                Quiz
               </NavLink>
             </li>
 
