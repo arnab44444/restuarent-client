@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex justify-between  bg-gradient-to-r from-orange-400 to-orange-600  border-b px-8 md:px-12 lg:px-16 xl:px-24 shadow-sm">
+      <div className="flex justify-between navbar fixed top-0 left-0 w-screen z-50 m-0 p-0 bg-gradient-to-r from-orange-400 to-orange-600  border-b px-8 md:px-12 lg:px-16 xl:px-24 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div
