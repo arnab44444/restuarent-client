@@ -17,7 +17,7 @@ const FoodList = ({ myFoodPromise }) => {
         confirmButtonText: "Yes, cancel it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://restuarent-server-sepia.vercel.app/cancel_order/${_id}`, {
+          fetch(`http://localhost:3000/cancel_order/${_id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

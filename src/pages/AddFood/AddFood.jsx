@@ -20,7 +20,7 @@ const AddFood = () => {
       quantity: parseInt(newFood.quantity)
     }
 
-    axios.post('https://restuarent-server-sepia.vercel.app/foods', updateFood)
+    axios.post('http://localhost:3000/foods', updateFood)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

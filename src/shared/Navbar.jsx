@@ -129,6 +129,16 @@ const Navbar = () => {
                   <QuizPage></QuizPage>
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/chat-with-ai"
+                  className={({ isActive }) =>
+                    isActive ? "text-indigo-500" : ""
+                  }
+                >
+                  Chat with AI
+                </NavLink>
+              </li>
               {user && (
                 <>
                   <li>
@@ -214,6 +224,17 @@ const Navbar = () => {
                 }
               >
                 Quiz
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/chat-with-ai"
+                className={({ isActive }) =>
+                  isActive ? "text-white" : ""
+                }
+              >
+                Chat with AI
               </NavLink>
             </li>
 

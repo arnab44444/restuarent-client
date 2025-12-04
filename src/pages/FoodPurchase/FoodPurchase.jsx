@@ -50,7 +50,7 @@ const FoodPurchase = () => {
     };
 
     axios
-      .post(`https://restuarent-server-sepia.vercel.app/place-order/${_id}`, purchaseData)
+      .post(`http://localhost:3000/place-order/${_id}`, purchaseData)
       .then(() => {
         toast.success("Purchase successful");
         setFoods((prev) => ({

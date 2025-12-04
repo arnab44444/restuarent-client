@@ -14,6 +14,7 @@ import MyFood from "../pages/MyFood/MyFood";
 import UpdateFood from "../pages/MyFoodPost/UpdateFood";
 import MyPost from "../pages/MyFoodPost/MyPost";
 import QuizPage from "../pages/Home/QuizPage";
+import ChatWithAI from "../pages/ChatWithAI/ChatWithAI";
 //import CancelOrder from "../pages/MyFood/CancelOrder";
 
 const router = createBrowserRouter([
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         //path: '',
         index: true,
 
-        loader: () => fetch("https://restuarent-server-sepia.vercel.app/top-purchased-foods"),
+        loader: () => fetch("http://localhost:3000/top-purchased-foods"),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "allFood",
 
-        loader: () => fetch("https://restuarent-server-sepia.vercel.app/foods"),
+        loader: () => fetch("http://localhost:3000/foods"),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -51,18 +52,22 @@ const router = createBrowserRouter([
       {
         path: "quiz",
 
-        // loader: () => fetch("https://restuarent-server-sepia.vercel.app/foods"),
+        // loader: () => fetch("http://localhost:3000/foods"),
         // hydrateFallbackElement: (
         //   <span className="loading loading-bars loading-xl"></span>
         // ),
         element: <QuizPage></QuizPage>,
       },
 
+      {
+        path: "chat-with-ai",
+        element: <ChatWithAI></ChatWithAI>,
+      },
 
       {
         path: "/foodDetails/:id",
         loader: ({ params }) =>
-          fetch(`https://restuarent-server-sepia.vercel.app/foodDetails/${params.id}`),
+          fetch(`http://localhost:3000/foodDetails/${params.id}`),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -76,7 +81,7 @@ const router = createBrowserRouter([
       {
         path: "/foodPurchase/:id",
         loader: ({ params }) =>
-          fetch(`https://restuarent-server-sepia.vercel.app/foodPurchase/${params.id}`),
+          fetch(`http://localhost:3000/foodPurchase/${params.id}`),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -104,7 +109,7 @@ const router = createBrowserRouter([
       // {
       //   path: "/cancelOrder/:id",
       //   loader: ({ params }) =>
-      //     fetch(`https://restuarent-server-sepia.vercel.app/cancel_Order/${params.id}`),
+      //     fetch(`http://localhost:3000/cancel_Order/${params.id}`),
       //   hydrateFallbackElement: (
       //     <span className="loading loading-bars loading-xl"></span>
       //   ),
@@ -114,7 +119,7 @@ const router = createBrowserRouter([
       {
         path: "/updateFood/:id",
         loader: ({ params }) =>
-          fetch(`https://restuarent-server-sepia.vercel.app/updateFood/${params.id}`),
+          fetch(`http://localhost:3000/updateFood/${params.id}`),
         hydrateFallbackElement: (
           <span className="loading loading-bars loading-xl"></span>
         ),
@@ -149,7 +154,7 @@ const router = createBrowserRouter([
   },
   //   {
   //     path: "/jobs/:id",
-  //     loader: ({ params }) => fetch(`https://restuarent-server-sepia.vercel.app/jobs/${params.id}`),
+  //     loader: ({ params }) => fetch(`http://localhost:3000/jobs/${params.id}`),
   //     hydrateFallbackElement: (
   //       <span className="loading loading-bars loading-xl"></span>
   //     ),
@@ -165,7 +170,7 @@ const router = createBrowserRouter([
   //   },
   //   {
   //     path: "/myApplications",
-  //     // loader: () => fetch(`https://restuarent-server-sepia.vercel.app/applications?email=${email}`),
+  //     // loader: () => fetch(`http://localhost:3000/applications?email=${email}`),
   //     //  hydrateFallbackElement: (
   //     //       <span className="loading loading-bars loading-xl"></span>
   //     //     ),
@@ -179,7 +184,7 @@ const router = createBrowserRouter([
   //   {
   //     path: "/updateApplication/:id",
   //     loader: ({ params }) =>
-  //       fetch(`https://restuarent-server-sepia.vercel.app/updateApplication/${params.id}`),
+  //       fetch(`http://localhost:3000/updateApplication/${params.id}`),
   //     hydrateFallbackElement: (
   //       <span className="loading loading-bars loading-xl"></span>
   //     ),
@@ -207,7 +212,7 @@ const router = createBrowserRouter([
   //   {
   //     path: "/applications/:job_id",
   //     loader: ({params}) =>
-  //       fetch(`https://restuarent-server-sepia.vercel.app/applications/job/${params.job_id}`),
+  //       fetch(`http://localhost:3000/applications/job/${params.job_id}`),
   //     hydrateFallbackElement: (
   //       <span className="loading loading-bars loading-xl"></span>
   //     ),

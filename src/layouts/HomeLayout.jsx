@@ -15,9 +15,9 @@ const HomeLayout = () => {
         <Navbar></Navbar>
 
         {/* slider */}
-        
 
        
+
       {/* </header> */}
 
       <main className="flex-grow">

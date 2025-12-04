@@ -31,7 +31,7 @@ const UpdateFood = () => {
       image,
     };
 
-    fetch(`https://restuarent-server-sepia.vercel.app/foods/${data?._id}`, {
+    fetch(`http://localhost:3000/foods/${data?._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
